@@ -1,0 +1,9 @@
+D:\workspace\wpautomation\wptests\bin\Debug\wptests.dll
+D:\workspace\wpautomation\wptests\bin\Debug\wptests.pdb
+D:\workspace\wpautomation\wptests\bin\Debug\wpautomation.dll
+D:\workspace\wpautomation\wptests\bin\Debug\WebDriver.dll
+D:\workspace\wpautomation\wptests\bin\Debug\wpautomation.pdb
+D:\workspace\wpautomation\wptests\bin\Debug\WebDriver.xml
+D:\workspace\wpautomation\wptests\obj\Debug\wptests.csprojResolveAssemblyReference.cache
+D:\workspace\wpautomation\wptests\obj\Debug\wptests.dll
+D:\workspace\wpautomation\wptests\obj\Debug\wptests.pdb
