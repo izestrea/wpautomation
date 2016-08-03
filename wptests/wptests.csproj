@@ -54,6 +54,7 @@
     <Compile Include="LoginTests.cs" />
     <Compile Include="PageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WpTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\wpautomation\wpautomation.csproj">

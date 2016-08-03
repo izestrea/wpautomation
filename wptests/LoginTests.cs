@@ -5,14 +5,8 @@ using wpautomation;
 namespace wptests
 {
     [TestClass]
-    public class LoginTests
-    {
-        [TestInitialize]
-        public void Init()
-        {
-            Driver.Initialize();
-        }
-
+    public class LoginTests : WpTests
+    {       
         [TestMethod]
         public void Admin_User_Can_Login()
         {
@@ -20,12 +14,6 @@ namespace wptests
             LoginPage.LoginAs("admin").WithPassword("password").Login();
 
            Assert.IsTrue(DashboardPage.IsAt, "Failed to login");
-        }
-
-        [TestCleanup]
-        public void CLeanup()
-        {
-            Driver.Close();
         }
     }
 }
