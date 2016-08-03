@@ -73,14 +73,20 @@ namespace wptests.Posts_Tests
         public void Can_Search_Posts()
         {
             // create a new post
+            NewPostPage.GoTo();
+            NewPostPage.CreatePost("Searching posts, title").WithBody("Searching posts, body").Publish();
             
             // go to list posts
+            ListPostsPage.GoTo(PostType.Posts);
 
             // search for post
+            ListPostsPage.SearchForPost("Searching posts, title");
 
             // check that post shows up in results
+            Assert.IsTrue(ListPostsPage.DoesPostExistWithTitle("Searching posts, title"));
 
             // cleanup - trash post
+            ListPostsPage.TrashPost("Searching posts, title");
         }
     }
 }
