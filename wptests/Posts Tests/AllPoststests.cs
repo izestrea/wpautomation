@@ -69,5 +69,18 @@ namespace wptests.Posts_Tests
             ListPostsPage.TrashPost("Added posts show up, title");
             Assert.AreEqual(ListPostsPage.PreviousPostCount, ListPostsPage.CurrentPostCount, "Couldn't trash post");
         }
+        [TestMethod]
+        public void Can_Search_Posts()
+        {
+            // create a new post
+            
+            // go to list posts
+
+            // search for post
+
+            // check that post shows up in results
+
+            // cleanup - trash post
+        }
     }
 }
