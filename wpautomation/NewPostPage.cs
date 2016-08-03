@@ -12,12 +12,7 @@ namespace wpautomation
     {
         public static void GoTo()
         {
-            // refactor: should we make a general menu navigation?
-            var menuPosts = Driver.Instance.FindElement(By.Id("menu-posts"));
-            menuPosts.Click();
-
-            var addNew = Driver.Instance.FindElement(By.LinkText("Add New"));
-            addNew.Click();
+            LeftNavigation.Posts.AddNew.Select();            
         }
 
         public static CreatePostCommand CreatePost(string title)
@@ -78,7 +73,6 @@ namespace wpautomation
             Driver.Instance.SwitchTo().DefaultContent();
 
             Driver.Wait(TimeSpan.FromSeconds(1));
-            Thread.Sleep(1000);
 
             Driver.Instance.FindElement(By.Id("publish")).Click();
         }
