@@ -20,7 +20,7 @@ namespace wpautomation
 
         public static void Close()
         {
-            Instance.Close();
+            //Instance.Close();
         }
     }
 }

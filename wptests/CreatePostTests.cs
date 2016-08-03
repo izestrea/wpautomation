@@ -9,7 +9,7 @@ using wpautomation;
 namespace wptests
 {
     [TestClass]
-    class CreatePostTests
+    public class CreatePostTests
     {
         [TestInitialize]
         public void Init()
