@@ -55,18 +55,17 @@ namespace wptests.Posts_Tests
             ListPostsPage.StoreCount();
 
             // add a new post
-            NewPostPage.GoTo();
-            NewPostPage.CreatePost("Added posts show up, title").WithBody("Addes posts show up, body").Publish();
+            PostCreator.CreatePost();
 
             // go to posts, get new post count
             ListPostsPage.GoTo(PostType.Posts);
             Assert.AreEqual(ListPostsPage.PreviousPostCount + 1, ListPostsPage.CurrentPostCount, "Count of posts did not increase");
 
             // check for added post
-            Assert.IsTrue(ListPostsPage.DoesPostExistWithTitle("Added posts show up, title"));
+            Assert.IsTrue(ListPostsPage.DoesPostExistWithTitle(PostCreator.PreviousTitle));
 
             // trash post (clean up)
-            ListPostsPage.TrashPost("Added posts show up, title");
+            ListPostsPage.TrashPost(PostCreator.PreviousTitle);
             Assert.AreEqual(ListPostsPage.PreviousPostCount, ListPostsPage.CurrentPostCount, "Couldn't trash post");
         }
         [TestMethod]
