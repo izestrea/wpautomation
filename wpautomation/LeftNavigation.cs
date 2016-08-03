@@ -15,11 +15,7 @@ namespace wpautomation
             {
                 public static void Select()
                 {
-                    var menuPosts = Driver.Instance.FindElement(By.Id("menu-posts"));
-                    menuPosts.Click();
-
-                    var addNew = Driver.Instance.FindElement(By.LinkText("Add New"));
-                    addNew.Click();
+                    MenuSelector.Select("menu-posts", "Add New");
                 }
             }            
         }
@@ -29,10 +25,17 @@ namespace wpautomation
             {
                 public static void Select()
                 {
-                    Driver.Instance.FindElement(By.Id("menu-pages")).Click();
-                    Driver.Instance.FindElement(By.LinkText("All Pages")).Click();
+                    MenuSelector.Select("menu-pages", "All Pages");
                 }
             }
         }
-    }    
+    }
+    public class MenuSelector
+    {
+        public static void Select(string topLevelMenuId, string subMenuLinkText)
+        {
+            Driver.Instance.FindElement(By.Id(topLevelMenuId)).Click();
+            Driver.Instance.FindElement(By.LinkText(subMenuLinkText)).Click();
+        }
+    }
 }
