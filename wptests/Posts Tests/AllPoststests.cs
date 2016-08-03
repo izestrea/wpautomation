@@ -9,7 +9,7 @@ using wpautomation;
 namespace wptests.Posts_Tests
 {
     [TestClass]
-    public class AllPoststests : WpTests
+    public class AllPostsTests : WpTests
     {
         // added posts to show up in all posts
         // can activate excerpt mode
@@ -72,20 +72,19 @@ namespace wptests.Posts_Tests
         public void Can_Search_Posts()
         {
             // create a new post
-            NewPostPage.GoTo();
-            NewPostPage.CreatePost("Searching posts, title").WithBody("Searching posts, body").Publish();
+            PostCreator.CreatePost();
             
             // go to list posts
             ListPostsPage.GoTo(PostType.Posts);
 
             // search for post
-            ListPostsPage.SearchForPost("Searching posts, title");
+            ListPostsPage.SearchForPost(PostCreator.PreviousTitle);
 
             // check that post shows up in results
-            Assert.IsTrue(ListPostsPage.DoesPostExistWithTitle("Searching posts, title"));
+            Assert.IsTrue(ListPostsPage.DoesPostExistWithTitle(PostCreator.PreviousTitle));
 
             // cleanup - trash post
-            ListPostsPage.TrashPost("Searching posts, title");
+            ListPostsPage.TrashPost(PostCreator.PreviousTitle);
         }
     }
 }
