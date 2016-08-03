@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace wpautomation
@@ -27,8 +28,13 @@ namespace wpautomation
         {
             get
             {
-                return "http://localhost:60193/"
+                return "http://localhost:60193/";
             }
+        }
+
+        public static void Wait(TimeSpan timeSpan)
+        {
+            Thread.Sleep((int)(timeSpan.TotalSeconds * 1000));
         }
     }
 }
