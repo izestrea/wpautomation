@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using wpautomation;
 
 namespace wptests
-{
+{    
     [TestClass]
-    public class CreatePostTests
+    public class PageTests
     {
         [TestInitialize]
         public void Init()
@@ -18,17 +18,16 @@ namespace wptests
         }
 
         [TestMethod]
-        public void Can_Create_A_Basic_Post()
+        public void Can_Edit_A_Page()
         {
             LoginPage.GotTo();
             LoginPage.LoginAs("admin").WithPassword("password").Login();
 
-            NewPostPage.GoTo();
-            NewPostPage.CreatePost("This is the test post title").WithBody("Hi, this is the body.").Publish();
+            ListPostsPage.GoTo(PostType.Page);
+            ListPostsPage.SelectPost("Sample Page");
 
-            NewPostPage.GoToNewPost();
-
-            Assert.AreEqual(PostPage.Title, "This is the test post title", "Title did not match new post.");
+            Assert.IsTrue(NewPostPage.IsInEditMode(), "Wasn't in edit mode");
+            Assert.AreEqual("Sample Page", NewPostPage.Title, "Title did not match");
         }
 
         [TestCleanup]

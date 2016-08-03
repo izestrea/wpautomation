@@ -30,6 +30,27 @@ namespace wpautomation
             var newPostlink = message.FindElements(By.TagName("a"))[0];
             newPostlink.Click();
         }
+
+        public static bool IsInEditMode()
+        {
+            //return Driver.Instance.FindElement(By.Id("icon-edit-pages")) != null;
+           /* var h1s = Driver.Instance.FindElements(By.TagName("h1"));
+            if (h1s.Count > 0)
+                return h1s[0].Text == "Edit Page";
+            return false; */
+            return Driver.Instance.FindElement(By.XPath(".//*[@id='wpbody-content']/div[3]/h1")) != null;
+        }
+
+        public static string Title 
+        { 
+            get
+            {
+                var title = Driver.Instance.FindElement(By.Id("title"));
+                if (title != null)
+                    return title.GetAttribute("value");
+                return string.Empty;
+            }
+        }
     }
     public class CreatePostCommand
     {
