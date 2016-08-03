@@ -14,9 +14,6 @@ namespace wptests
         [TestMethod]
         public void Can_Edit_A_Page()
         {
-            LoginPage.GotTo();
-            LoginPage.LoginAs("admin").WithPassword("password").Login();
-
             ListPostsPage.GoTo(PostType.Page);
             ListPostsPage.SelectPost("Sample Page");
 

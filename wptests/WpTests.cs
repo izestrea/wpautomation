@@ -14,6 +14,8 @@ namespace wptests
         public void Init()
         {
             Driver.Initialize();
+            LoginPage.GotTo();
+            LoginPage.LoginAs("admin").WithPassword("password").Login();
         }
 
         [TestCleanup]

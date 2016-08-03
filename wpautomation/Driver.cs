@@ -22,5 +22,13 @@ namespace wpautomation
         {
             //Instance.Close();
         }
+
+        public static string BaseAddress 
+        {
+            get
+            {
+                return "http://localhost:60193/"
+            }
+        }
     }
 }

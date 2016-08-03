@@ -10,10 +10,7 @@ namespace wptests
         [TestMethod]
         public void Admin_User_Can_Login()
         {
-            LoginPage.GotTo();
-            LoginPage.LoginAs("admin").WithPassword("password").Login();
-
-           Assert.IsTrue(DashboardPage.IsAt, "Failed to login");
+            Assert.IsTrue(DashboardPage.IsAt, "Failed to login");
         }
     }
 }

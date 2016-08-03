@@ -13,7 +13,7 @@ namespace wpautomation
     {
         public static void GotTo()
         {
-            Driver.Instance.Navigate().GoToUrl("http://localhost:60193/wp-login.php");
+            Driver.Instance.Navigate().GoToUrl(Driver.BaseAddress + "wp-login.php");
             var wait = new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(10));
             wait.Until(d => d.SwitchTo().ActiveElement().GetAttribute("id") == "user_login");
         }
