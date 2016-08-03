@@ -14,6 +14,7 @@ namespace wptests
         public void Init()
         {
             Driver.Initialize();
+            PostCreator.Initialize();
             LoginPage.GotTo();
             LoginPage.LoginAs("admin").WithPassword("password").Login();
         }
@@ -21,6 +22,7 @@ namespace wptests
         [TestCleanup]
         public void Cleanup()
         {
+            PostCreator.Cleanup();
             Driver.Close();
         }
     }

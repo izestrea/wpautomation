@@ -51,5 +51,31 @@ namespace wpautomation
         {
             return CreateRandomString() + ", title";
         }
+
+        public static void Initialize()
+        {
+            PreviousTitle = null;
+            PreviousBody = null;
+        }
+
+        public static void Cleanup()
+        {
+            if (CreatedAPost)
+                TrashPosts();
+        }
+
+        private static void TrashPosts()
+        {
+ 	        ListPostsPage.TrashPost(PreviousTitle);
+            Initialize();
+        }
+
+        public static bool CreatedAPost 
+        { 
+            get 
+            {
+                return !String.IsNullOrEmpty(PreviousTitle);
+            } 
+        }
     }
 }

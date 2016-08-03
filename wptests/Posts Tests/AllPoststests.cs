@@ -72,19 +72,13 @@ namespace wptests.Posts_Tests
         public void Can_Search_Posts()
         {
             // create a new post
-            PostCreator.CreatePost();
+            PostCreator.CreatePost();      
             
-            // go to list posts
-            ListPostsPage.GoTo(PostType.Posts);
-
             // search for post
             ListPostsPage.SearchForPost(PostCreator.PreviousTitle);
 
             // check that post shows up in results
             Assert.IsTrue(ListPostsPage.DoesPostExistWithTitle(PostCreator.PreviousTitle));
-
-            // cleanup - trash post
-            ListPostsPage.TrashPost(PostCreator.PreviousTitle);
         }
     }
 }

@@ -6,4 +6,3 @@ D:\workspace\wpautomation\wpautomation\bin\Debug\WebDriver.xml
 D:\workspace\wpautomation\wpautomation\bin\Debug\WebDriver.Support.xml
 D:\workspace\wpautomation\wpautomation\obj\Debug\wpautomation.dll
 D:\workspace\wpautomation\wpautomation\obj\Debug\wpautomation.pdb
-D:\workspace\wpautomation\wpautomation\obj\Debug\wpautomation.csprojResolveAssemblyReference.cache
