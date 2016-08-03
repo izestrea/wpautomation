@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using wpautomation.Navigation;
 
 namespace wpautomation
 {
@@ -17,7 +18,14 @@ namespace wpautomation
                 {
                     MenuSelector.Select("menu-posts", "Add New");
                 }
-            }            
+            }
+            public class AllPosts
+            {
+                public static void Select()
+                {
+                    MenuSelector.Select("menu-posts", "All Posts");
+                }
+            }
         }
         public class Pages
         {

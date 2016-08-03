@@ -8,7 +8,8 @@ using wpautomation;
 
 namespace wptests.Posts_Tests
 {
-    class AllPoststests
+    [TestClass]
+    public class AllPoststests : WpTests
     {
         // added posts to show up in all posts
         // can activate excerpt mode
@@ -47,7 +48,7 @@ namespace wptests.Posts_Tests
         // can search posts
 
         [TestMethod]
-        public void Added_POsts_Show_Up()
+        public void Added_Posts_Show_Up()
         {
             // go to posts, get post count, store
             ListPostsPage.GoTo(PostType.Posts);
@@ -55,9 +56,7 @@ namespace wptests.Posts_Tests
 
             // add a new post
             NewPostPage.GoTo();
-            NewPostPage.CreatePost("Added posts show up, title")
-                .WithBody("Addes posts, show up, body")
-                .Publish();
+            NewPostPage.CreatePost("Added posts show up, title").WithBody("Addes posts show up, body").Publish();
 
             // go to posts, get new post count
             ListPostsPage.GoTo(PostType.Posts);
